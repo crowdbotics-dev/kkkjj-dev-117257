@@ -1,3 +1,7 @@
+from rest_framework import viewsets
+from home.models import SDFG,JKFRifles,JKFRifles,SDFG,JKFRifles,SDFG
+from .serializers import SDFGSerializer,JKFRiflesSerializer,JKFRiflesSerializer,SDFGSerializer,JKFRiflesSerializer,SDFGSerializer
+from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
@@ -28,3 +32,13 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
+
+class SDFGViewSet(viewsets.ModelViewSet):
+    serializer_class = SDFGSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = SDFG.objects.all()
+
+class JKFRiflesViewSet(viewsets.ModelViewSet):
+    serializer_class = JKFRiflesSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = JKFRifles.objects.all()
