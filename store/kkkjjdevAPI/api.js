@@ -8,8 +8,44 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_jkfrifles_list(payload) {
+  return kkkjjdevAPI.get(`/api/v1/jkfrifles/`)
+}
+function api_v1_jkfrifles_create(payload) {
+  return kkkjjdevAPI.post(`/api/v1/jkfrifles/`, payload)
+}
+function api_v1_jkfrifles_retrieve(payload) {
+  return kkkjjdevAPI.get(`/api/v1/jkfrifles/${payload.id}/`)
+}
+function api_v1_jkfrifles_update(payload) {
+  return kkkjjdevAPI.put(`/api/v1/jkfrifles/${payload.id}/`, payload)
+}
+function api_v1_jkfrifles_partial_update(payload) {
+  return kkkjjdevAPI.patch(`/api/v1/jkfrifles/${payload.id}/`, payload)
+}
+function api_v1_jkfrifles_destroy(payload) {
+  return kkkjjdevAPI.delete(`/api/v1/jkfrifles/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return kkkjjdevAPI.post(`/api/v1/login/`, payload)
+}
+function api_v1_sdfg_list(payload) {
+  return kkkjjdevAPI.get(`/api/v1/sdfg/`)
+}
+function api_v1_sdfg_create(payload) {
+  return kkkjjdevAPI.post(`/api/v1/sdfg/`, payload)
+}
+function api_v1_sdfg_retrieve(payload) {
+  return kkkjjdevAPI.get(`/api/v1/sdfg/${payload.id}/`)
+}
+function api_v1_sdfg_update(payload) {
+  return kkkjjdevAPI.put(`/api/v1/sdfg/${payload.id}/`, payload)
+}
+function api_v1_sdfg_partial_update(payload) {
+  return kkkjjdevAPI.patch(`/api/v1/sdfg/${payload.id}/`, payload)
+}
+function api_v1_sdfg_destroy(payload) {
+  return kkkjjdevAPI.delete(`/api/v1/sdfg/${payload.id}/`)
 }
 function api_v1_signup_create(payload) {
   return kkkjjdevAPI.post(`/api/v1/signup/`, payload)
@@ -49,7 +85,19 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_jkfrifles_list,
+  api_v1_jkfrifles_create,
+  api_v1_jkfrifles_retrieve,
+  api_v1_jkfrifles_update,
+  api_v1_jkfrifles_partial_update,
+  api_v1_jkfrifles_destroy,
   api_v1_login_create,
+  api_v1_sdfg_list,
+  api_v1_sdfg_create,
+  api_v1_sdfg_retrieve,
+  api_v1_sdfg_update,
+  api_v1_sdfg_partial_update,
+  api_v1_sdfg_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
